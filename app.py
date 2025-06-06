@@ -17,6 +17,7 @@ monthly_sales = data.groupby("Month_")["Value"].sum().reset_index()
 
 
 app = dash.Dash(__name__)
+server = app.server
 
 app.layout = html.Div([
             html.H1("Activation Insights Report"),
