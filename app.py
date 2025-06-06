@@ -5,7 +5,7 @@ import plotly.express as px
 from dash import dcc, html, dash_table
 from dash.dependencies import Output, Input
 
-data = pd.read_excel('melano_acnes_data.csv')
+data = pd.read_csv('melano_acnes_data.csv')
 data["Channel"] = data["Channel"].astype(str).str.strip()
 data["Brand"] = data["Brand"].astype(str).str.strip()
 data['Brand'] = data["Brand"].apply(lambda x: x.encode('ascii', 'ignore').decode())
