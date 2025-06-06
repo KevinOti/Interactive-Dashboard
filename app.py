@@ -1,4 +1,5 @@
 import openpyxl
+import os
 import pandas as pd
 import dash
 import plotly.express as px
@@ -172,8 +173,11 @@ def generate_summary(selected_brand, selected_channel):
 
 
     
-        
-    
 
-if __name__ =='__main__':
-    app.run(debug=True)
+
+app = dash.Dash(__name__)  
+server = app.server  
+
+if __name__ == "__main__":
+    app.run_server(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
+
